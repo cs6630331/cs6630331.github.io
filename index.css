@@ -13,6 +13,10 @@
 	--soft-shadow: 	0 3px 24px hsl(0, 0%, 0%, 0.1);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	background: var(--bg);
 	color: var(--fg);
@@ -58,7 +62,6 @@ strong {
 }
 
 .nav-list {
-	position: relative;
 	margin: 0;
 	padding: 0;
 }
@@ -68,6 +71,7 @@ nav a,
 	display: inline-block;
 	padding: 0.5rem;
 	text-decoration: none;
+	border-radius: 0.25rem;
 }
 
 .nav-list a:is(:hover, :focus),
@@ -82,11 +86,12 @@ nav a,
 
 .nav-list > li {
 	display: inline-block;
+	position: relative;
 }
 
 .dropdown {
 	position: absolute;
-	bottom: 0.25rem;
+	bottom: 0;
 	right: 0;
 	transform: translateY(100%);
 
@@ -95,6 +100,11 @@ nav a,
 
 	background: var(--bg-accent);
 	box-shadow: var(--ao-shadow);
+
+	width: -moz-max-content;
+	width: max-content;
+
+	border-radius: 0.35rem;
 }
 
 .dropdown a {
